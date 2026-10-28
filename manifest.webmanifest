@@ -1,0 +1,20 @@
+{
+  "name": "Andrew Daugherty | Industrial Designer & Artist",
+  "short_name": "Andrew Daugherty",
+  "start_url": "/",
+  "display": "browser",
+  "theme_color": "#8056de",
+  "background_color": "#f7f7fc",
+  "icons": [
+    {
+      "src": "/assets/portfolio-icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/assets/portfolio-icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}
