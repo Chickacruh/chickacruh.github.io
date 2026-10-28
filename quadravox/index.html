@@ -42,7 +42,16 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/portfolio-icon-32.png?v=2">
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/portfolio-icon-180.png?v=2">
 <link rel="manifest" href="/manifest.webmanifest?v=2">
-</head><body id="_">
+<style id="portfolio-motion">
+.scroll-reveal{transition:opacity .75s ease,translate .75s cubic-bezier(.22,1,.36,1);transition-delay:var(--reveal-delay,0ms)}
+.scroll-reveal[data-reveal="pending"]{opacity:0;translate:0 28px}
+.scroll-reveal[data-reveal="visible"]{opacity:1;translate:0 0}
+.portfolio-portrait{pointer-events:auto!important;overflow:visible!important;transform:perspective(900px) translate3d(var(--photo-x,0px),var(--photo-y,0px),0) rotateX(var(--photo-rx,0deg)) rotateY(var(--photo-ry,0deg));transition:transform .45s cubic-bezier(.22,1,.36,1)}
+.portfolio-portrait img{border-radius:10px}
+@media(hover:hover) and (pointer:fine){.portfolio-portrait:hover img{animation:portrait-float 4s ease-in-out infinite}}
+@keyframes portrait-float{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-9px) rotate(.6deg)}}
+@media(prefers-reduced-motion:reduce){.scroll-reveal{transition:none;opacity:1!important;translate:none!important}.portfolio-portrait{transform:none!important;transition:none}.portfolio-portrait img{animation:none!important}}
+</style></head><body id="_">
   <div id="__x2d_body" class="dragScroll">
     <div data-visible="false" data-bound-visible="---Nav-nav-mobile" id="nav-mobile">
       <div id="nav-mobile_0">
@@ -417,4 +426,39 @@
     </div>
   </div>
 
-</body></html>
+<script id="portfolio-motion-script">
+(()=>{
+ const reduce=matchMedia('(prefers-reduced-motion: reduce)');
+ const home=!!document.querySelector('#Project_List');
+ const selectors=home?'#hero,#Content_0,#Project_List > a,#Container_17,#Container_18,#tech-stack,#tech-stack_0,#Container_20,#Container_21,#Container_23,#Footer > div':'h3,img,#Footer > div';
+ const elements=[...document.querySelectorAll(selectors)].filter(e=>!e.closest('[role="banner"],template'));
+ let observer;
+ const show=e=>{e.dataset.reveal='visible';observer?.unobserve(e)};
+ if(!reduce.matches&&'IntersectionObserver' in window){
+  observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting)show(entry.target)}),{threshold:.05,rootMargin:'0px 0px -30px 0px'});
+  elements.forEach((e,i)=>{
+   e.classList.add('scroll-reveal');
+   e.style.setProperty('--reveal-delay',e.closest('#Project_List')?'70ms':'0ms');
+   const r=e.getBoundingClientRect();
+   if(r.top<innerHeight&&r.bottom>0){show(e)}else{e.dataset.reveal='pending';observer.observe(e)}
+  });
+ }
+ const showAncestors=node=>{for(let e=node;e;e=e.parentElement)if(e.classList.contains('scroll-reveal'))show(e)};
+ document.addEventListener('focusin',e=>showAncestors(e.target));
+ const revealHash=()=>{try{const target=document.getElementById(decodeURIComponent(location.hash.slice(1)));if(target)showAncestors(target)}catch{}};
+ addEventListener('hashchange',revealHash);revealHash();
+ reduce.addEventListener('change',e=>{if(e.matches){observer?.disconnect();elements.forEach(show)}});
+ const photo=document.querySelector('#Male_model_portfolio_ideas_in_Chicago_030224_Modeling_Xander1398_retouched_1');
+ if(photo){
+  photo.classList.add('portfolio-portrait');
+  let frame=0,x=0,y=0;
+  const update=()=>{frame=0;photo.style.setProperty('--photo-x',`${x*9}px`);photo.style.setProperty('--photo-y',`${y*7}px`);photo.style.setProperty('--photo-rx',`${-y*5}deg`);photo.style.setProperty('--photo-ry',`${x*6}deg`)};
+  photo.addEventListener('pointermove',e=>{
+   if(reduce.matches||e.pointerType==='touch')return;
+   const r=photo.getBoundingClientRect();x=Math.max(-1,Math.min(1,(e.clientX-r.left)/r.width*2-1));y=Math.max(-1,Math.min(1,(e.clientY-r.top)/r.height*2-1));
+   if(!frame)frame=requestAnimationFrame(update);
+  });
+  photo.addEventListener('pointerleave',()=>{x=y=0;if(frame)cancelAnimationFrame(frame);update()});
+ }
+})();
+</script></body></html>
