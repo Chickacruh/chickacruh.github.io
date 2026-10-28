@@ -66,24 +66,18 @@
 .scroll-reveal[data-reveal="visible"]{opacity:1;translate:0 0}
 @media(prefers-reduced-motion:reduce){.scroll-reveal{transition:none;opacity:1!important;translate:none!important}}
 </style><style id="portrait-carousel-style">
-#Container_18{height:auto;align-items:center;min-width:0;overflow:visible}
-.about-carousel{width:100%;max-width:469px;min-width:0;color:#17151d;font-family:Geist,Arial,sans-serif}
-.portrait-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 2px 16px;font-size:13px;color:#6e647d}
-.portrait-hint{font-size:12px;color:#8a8493}
-.portrait-track{display:flex;gap:16px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-padding:0;cursor:grab;border-radius:12px;touch-action:pan-x pan-y;user-select:none;scrollbar-width:none;padding:0 0 8px}
-.portrait-track::-webkit-scrollbar{display:none}.portrait-track::after{content:"";flex:0 0 calc(13% - 16px)}
-.portrait-track.is-dragging{cursor:grabbing;scroll-snap-type:none}
-.portrait-slide{flex:0 0 87%;min-width:0;margin:0;aspect-ratio:469/529;overflow:hidden;border-radius:12px;scroll-snap-align:start;background:#ebe7f2}
-.portrait-slide img{display:block;width:100%;height:100%;object-fit:cover;pointer-events:none}
-.portrait-controls{display:flex;justify-content:space-between;align-items:center;padding:16px 2px 0}
-.portrait-count{font-size:12px;letter-spacing:.12em;font-variant-numeric:tabular-nums;color:#776c87}
-.portrait-arrows{display:flex;gap:10px}
-.portrait-arrows button{width:40px;height:40px;border:1px solid #d7cde9;border-radius:50%;background:transparent;color:#8056de;font:20px/1 Arial,sans-serif;cursor:pointer;display:grid;place-items:center;transition:background .2s,color .2s}
-.portrait-arrows button:hover:not(:disabled){background:#8056de;color:#fff}
-.portrait-arrows button:disabled{opacity:.3;cursor:default}
-.portrait-track:focus-visible,.portrait-arrows button:focus-visible{outline:2px solid #8056de;outline-offset:4px}
-@media(max-width:600px){.portrait-slide{flex-basis:88%}.portrait-track{gap:12px}.portrait-track::after{flex-basis:calc(12% - 12px)}.portrait-hint{font-size:11px}}
-@media(prefers-reduced-motion:reduce){.portrait-arrows button{transition:none}}
+#Container_18{height:auto;align-items:center;min-width:0;overflow:visible;justify-content:center}
+.about-carousel{width:100%;max-width:469px;min-width:0;font-family:Geist,Arial,sans-serif;padding:24px 28px 0 4px}
+.portrait-deck{position:relative;width:100%;aspect-ratio:469/529;isolation:isolate}
+.portrait-card{position:absolute;inset:0;width:100%;height:100%;margin:0;padding:0;border:0;border-radius:20px;background:#edeae7;box-shadow:0 1px 2px #5e5e5e16,0 4px 5px #5e5e5e18,0 12px 20px -6px #5e5e5e30;transform-origin:50% 115%;backface-visibility:hidden;transition:transform .5s cubic-bezier(.22,1,.36,1);cursor:grab;touch-action:pan-y;user-select:none;-webkit-user-select:none}
+.portrait-card.is-dragging{cursor:grabbing;transition:none}
+.portrait-card img{display:block;width:100%;height:100%;object-fit:cover;border-radius:20px;pointer-events:none}
+.portrait-badge{position:absolute;left:14px;top:14px;display:flex;align-items:center;gap:8px;padding:7px 11px;border-radius:999px;background:#fcf9f3eb;color:#313131;font:10px/1.2 Geist,Arial,sans-serif;text-transform:uppercase;letter-spacing:.07em;pointer-events:none}
+.portrait-badge i{width:6px;height:6px;background:#8056de;display:inline-block}
+.portrait-card:focus-visible{outline:2px solid #8056de;outline-offset:5px}
+.portrait-deck-footer{display:flex;justify-content:space-between;align-items:center;padding:40px 0 0;gap:12px;color:#706779;font-size:11px;line-height:1;letter-spacing:.08em;text-transform:uppercase;font-variant-numeric:tabular-nums}
+@media(max-width:600px){.about-carousel{padding:16px 26px 0 2px}.portrait-deck-footer{font-size:10px;padding-top:32px}.portrait-badge{left:10px;top:10px;font-size:9px}}
+@media(prefers-reduced-motion:reduce){.portrait-card{transition:none}}
 </style></head><body data--breakpoints-device="Desktop" id="_">
   <div id="__x2d_body" class="dragScroll">
     <div role="banner" id="nav-desktop">
@@ -417,11 +411,7 @@
           <div id="Text_43"><p id="__66" class="about-bio"><span id="__67" class="text">As an </span><span id="__68" class="text">industrial designer</span><span id="__69" class="text"> and </span><span id="__70" class="text">artist</span><span id="__71" class="text">, I blend </span><span id="__72" class="text">creativity</span><span id="__73" class="text"> and</span><span id="__74" class="text"> technology </span><span id="__75" class="text">to craft captivating </span><span id="__76" class="text">experiences </span><span id="__77" class="text">and</span><span id="__78" class="text"> products</span><span id="__79" class="text">. With an eye for detail and a focus on </span><span id="__80" class="text">innovation</span><span id="__81" class="text">, I bring </span><span id="__82" class="text">depth</span><span id="__83" class="text"> to every project. I'm a student at Georgia Institute of Technology with a passion for finding </span><span id="__84" class="text">creative solutions</span><span id="__85" class="text"> to technical problems. </span></p><div class="about-contact"><span id="__88" class="text"><span id="Contact" class="local-contact-anchor"></span>AndrewGDaugherty@gmail.com<br id="__89">470-345-7339<br id="__90"></span><a id="__91" class="text" href="/assets/resume.pdf">Resume PDF</a></div></div>
         </div>
         <div id="Container_18">
-          <section class="about-carousel" aria-label="Photos of Andrew" aria-roledescription="carousel">
-<div class="portrait-heading"><span>Photos</span><span class="portrait-hint">Drag to explore ↔</span></div>
-<div class="portrait-track" tabindex="0" aria-label="Photo gallery. Use the left and right arrow keys."><figure class="portrait-slide" role="group" aria-roledescription="slide" aria-label="1 of 3"><img src="/cdn-cgi/imagedelivery/s-dfVpmPR-aKHmwFNwAgnQ/vivian-6ii52m7y6i.figweb.site-ff92ecc8be3549b544cded582c01643fe4974176/w=938" alt="Andrew Daugherty, portrait 1" loading="lazy" decoding="async" draggable="false"></figure><figure class="portrait-slide" role="group" aria-roledescription="slide" aria-label="2 of 3"><img src="/cdn-cgi/imagedelivery/s-dfVpmPR-aKHmwFNwAgnQ/vivian-6ii52m7y6i.figweb.site-ff92ecc8be3549b544cded582c01643fe4974176/w=938" alt="Andrew Daugherty, portrait 2" loading="lazy" decoding="async" draggable="false"></figure><figure class="portrait-slide" role="group" aria-roledescription="slide" aria-label="3 of 3"><img src="/cdn-cgi/imagedelivery/s-dfVpmPR-aKHmwFNwAgnQ/vivian-6ii52m7y6i.figweb.site-ff92ecc8be3549b544cded582c01643fe4974176/w=938" alt="Andrew Daugherty, portrait 3" loading="lazy" decoding="async" draggable="false"></figure></div>
-<div class="portrait-controls"><span class="portrait-count" aria-live="polite" aria-atomic="true">01 / 03</span><div class="portrait-arrows"><button type="button" class="portrait-prev" aria-label="Previous photo" disabled>←</button><button type="button" class="portrait-next" aria-label="Next photo">→</button></div></div>
-</section>
+          <section class="about-carousel" aria-label="Photos of Andrew" aria-roledescription="carousel"><div class="portrait-deck"><button type="button" class="portrait-card" data-photo="1" aria-label="Photo 1 of 3. Activate or drag to shuffle." style="z-index:3;transform:translate3d(0px,0.0px,0) rotate(4.0deg) scale(1.0)"><img src="/cdn-cgi/imagedelivery/s-dfVpmPR-aKHmwFNwAgnQ/vivian-6ii52m7y6i.figweb.site-ff92ecc8be3549b544cded582c01643fe4974176/w=938" alt="Andrew Daugherty" loading="lazy" decoding="async" draggable="false"><span class="portrait-badge"><i aria-hidden="true"></i>Andrew · 01</span></button><button type="button" class="portrait-card" data-photo="2" aria-label="Photo 2 of 3. Activate or drag to shuffle." style="z-index:2;transform:translate3d(16px,-5.6px,0) rotate(6.5deg) scale(0.97)" tabindex="-1" aria-hidden="true"><img src="/cdn-cgi/imagedelivery/s-dfVpmPR-aKHmwFNwAgnQ/vivian-6ii52m7y6i.figweb.site-ff92ecc8be3549b544cded582c01643fe4974176/w=938" alt="Andrew Daugherty" loading="lazy" decoding="async" draggable="false"><span class="portrait-badge"><i aria-hidden="true"></i>Andrew · 02</span></button><button type="button" class="portrait-card" data-photo="3" aria-label="Photo 3 of 3. Activate or drag to shuffle." style="z-index:1;transform:translate3d(32px,-11.2px,0) rotate(9.0deg) scale(0.94)" tabindex="-1" aria-hidden="true"><img src="/cdn-cgi/imagedelivery/s-dfVpmPR-aKHmwFNwAgnQ/vivian-6ii52m7y6i.figweb.site-ff92ecc8be3549b544cded582c01643fe4974176/w=938" alt="Andrew Daugherty" loading="lazy" decoding="async" draggable="false"><span class="portrait-badge"><i aria-hidden="true"></i>Andrew · 03</span></button></div><div class="portrait-deck-footer"><span class="portrait-count" aria-live="polite" aria-atomic="true">01 / 03</span><span>Drag to shuffle</span></div></section>
         </div>
       </div>
       <div id="Content_1">
@@ -787,19 +777,25 @@
 </script><script id="portrait-carousel-script">
 (()=>{
  const gallery=document.querySelector('.about-carousel');if(!gallery)return;
- const track=gallery.querySelector('.portrait-track'),slides=[...gallery.querySelectorAll('.portrait-slide')],prev=gallery.querySelector('.portrait-prev'),next=gallery.querySelector('.portrait-next'),count=gallery.querySelector('.portrait-count');
- const reduce=matchMedia('(prefers-reduced-motion: reduce)');let active=0,drag=null,frame=0;
- const leftOf=i=>slides[i].offsetLeft-slides[0].offsetLeft;
- // A trailing inset lets the final photo reach the same starting position.
- const update=()=>{frame=0;let nearest=0;slides.forEach((s,i)=>{if(Math.abs(leftOf(i)-track.scrollLeft)<Math.abs(leftOf(nearest)-track.scrollLeft))nearest=i});active=nearest;count.textContent=`${String(active+1).padStart(2,'0')} / ${String(slides.length).padStart(2,'0')}`;prev.disabled=active===0;next.disabled=active===slides.length-1};
- const go=i=>{i=Math.max(0,Math.min(slides.length-1,i));track.scrollTo({left:leftOf(i),behavior:reduce.matches?'instant':'smooth'})};
- prev.addEventListener('click',()=>go(active-1));next.addEventListener('click',()=>go(active+1));
- track.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();go(active+(e.key==='ArrowRight'?1:-1))}});
- track.addEventListener('scroll',()=>{if(!frame)frame=requestAnimationFrame(update)},{passive:true});
- track.addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse'||e.button!==0)return;drag={id:e.pointerId,x:e.clientX,left:track.scrollLeft};track.setPointerCapture(e.pointerId);track.classList.add('is-dragging')});
- track.addEventListener('pointermove',e=>{if(!drag||e.pointerId!==drag.id)return;track.scrollLeft=drag.left+drag.x-e.clientX});
- const release=e=>{if(!drag||e.pointerId!==drag.id)return;drag=null;track.classList.remove('is-dragging');if(track.hasPointerCapture(e.pointerId))track.releasePointerCapture(e.pointerId);update();go(active)};
- track.addEventListener('pointerup',release);track.addEventListener('pointercancel',release);track.addEventListener('lostpointercapture',()=>{drag=null;track.classList.remove('is-dragging')});
- new ResizeObserver(()=>{track.scrollLeft=leftOf(active);update()}).observe(track);update();
+ const deck=gallery.querySelector('.portrait-deck'),cards=[...gallery.querySelectorAll('.portrait-card')],counter=gallery.querySelector('.portrait-count'),reduce=matchMedia('(prefers-reduced-motion: reduce)');
+ let active=0,busy=false,drag=null,suppressClick=false;
+ const base=rank=>`translate3d(${rank*16}px,${-rank*5.6}px,0) rotate(${4+rank*2.5}deg) scale(${1-rank*.03})`;
+ const render=()=>{cards.forEach((card,i)=>{const rank=(i-active+cards.length)%cards.length;card.style.zIndex=cards.length-rank;card.style.transform=base(rank);card.tabIndex=rank===0?0:-1;card.setAttribute('aria-hidden',rank===0?'false':'true');card.style.pointerEvents=rank===0?'auto':'none'});counter.textContent=`${String(active+1).padStart(2,'0')} / ${String(cards.length).padStart(2,'0')}`};
+ const shuffle=(direction=1)=>{
+  if(busy)return;busy=true;const card=cards[active],focused=document.activeElement===card;
+  const finish=()=>{card.style.transition='none';active=(active+1)%cards.length;render();requestAnimationFrame(()=>{card.style.transition='';busy=false;if(focused)cards[active].focus({preventScroll:true})})};
+  if(reduce.matches){finish();return}
+  const animation=card.animate([{transform:card.style.transform,opacity:1},{transform:`translate3d(${direction*(deck.clientWidth+140)}px,-30px,0) rotate(${direction*25}deg) scale(.94)`,opacity:0}],{duration:260,easing:'cubic-bezier(.32,0,.67,0)',fill:'forwards'});
+  animation.onfinish=()=>{finish();animation.cancel()};
+ };
+ cards.forEach((card,i)=>{
+  card.addEventListener('click',()=>{if(suppressClick){suppressClick=false;return}if(i===active)shuffle(1)});
+  card.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();shuffle(e.key==='ArrowRight'?1:-1)}});
+  card.addEventListener('pointerdown',e=>{if(busy||i!==active||e.button!==0)return;suppressClick=false;drag={id:e.pointerId,x:e.clientX,y:e.clientY,dx:0,dy:0};card.setPointerCapture(e.pointerId)});
+  card.addEventListener('pointermove',e=>{if(!drag||drag.id!==e.pointerId)return;drag.dx=e.clientX-drag.x;drag.dy=e.clientY-drag.y;if(Math.abs(drag.dx)>5){card.classList.add('is-dragging');card.style.transform=`translate3d(${drag.dx}px,${drag.dy*.3}px,0) rotate(${4+drag.dx/18}deg) scale(1)`}});
+  const release=(e,cancel=false)=>{if(!drag||drag.id!==e.pointerId)return;const dx=drag.dx,moved=Math.abs(dx)>5;drag=null;card.classList.remove('is-dragging');if(card.hasPointerCapture(e.pointerId))card.releasePointerCapture(e.pointerId);suppressClick=moved;if(!cancel&&Math.abs(dx)>Math.min(70,deck.clientWidth*.18))shuffle(dx>0?1:-1);else render()};
+  card.addEventListener('pointerup',e=>release(e));card.addEventListener('pointercancel',e=>release(e,true));
+  card.addEventListener('lostpointercapture',()=>{if(drag){drag=null;card.classList.remove('is-dragging');render()}});
+ });render();
 })();
 </script></body></html>
