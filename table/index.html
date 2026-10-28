@@ -51,7 +51,14 @@
 @media(hover:hover) and (pointer:fine){.portfolio-portrait:hover img{animation:portrait-float 4s ease-in-out infinite}}
 @keyframes portrait-float{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-9px) rotate(.6deg)}}
 @media(prefers-reduced-motion:reduce){.scroll-reveal{transition:none;opacity:1!important;translate:none!important}.portfolio-portrait{transform:none!important;transition:none}.portfolio-portrait img{animation:none!important}}
-</style><style>#Help>.portfolio-extra-project{display:block;color:inherit;font:14px/1.5 Geist,Arial,sans-serif;text-decoration:none}</style><style>#Help>.portfolio-extra-project{display:block;color:inherit;font:14px/1.5 Geist,Arial,sans-serif;text-decoration:none}</style></head><body id="_">
+</style><style>#Help>.portfolio-extra-project{display:block;color:inherit;font:14px/1.5 Geist,Arial,sans-serif;text-decoration:none}</style><style>#Help>.portfolio-extra-project{display:block;color:inherit;font:14px/1.5 Geist,Arial,sans-serif;text-decoration:none}</style><style id="responsive-portfolio-polish">
+.uniform-project-links{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(4,auto);grid-auto-flow:column;column-gap:32px;row-gap:12px;width:min(100%,360px);margin:0 0 24px;padding:0}
+.uniform-project-links>a{display:block!important;margin:0!important;padding:0!important;color:#777780!important;font:400 14px/1.5 Geist,Arial,sans-serif!important;text-decoration:none!important;white-space:normal}
+.uniform-project-links>a:hover{color:#8056de!important}
+#Help{width:min(100%,360px);min-width:0}
+#Help>.uniform-project-links{margin:0}
+@media(max-width:767px){#Footer div:has(>#Help){flex-wrap:wrap;justify-content:flex-start;gap:24px;width:100%}#Footer #Help{width:100%;max-width:360px}.uniform-project-links{column-gap:20px}}
+</style></head><body id="_">
   <div id="__x2d_body" class="dragScroll">
     <div data-visible="false" data-bound-visible="---Nav-nav-mobile" id="nav-mobile">
       <div id="nav-mobile_0">
@@ -280,31 +287,7 @@
                 </a>
               </div>
             </div>
-            <div id="Help">
-              <span id="I6285_3127_6279_16907" class="pointer-events-none"><span id="__47" class="text">Projects</span></span>
-              <div id="Frame_22">
-                <div id="Frame_23">
-                  <a data-reaction-hover="437" id="menu-button_7" href="/table/">
-                    <span id="I6285_3127_6279_16910_4476_15653" class="pointer-events-none"><span id="__48" class="text">Table</span></span>
-                  </a>
-                </div>
-                <div id="Frame_24">
-                  <a data-reaction-hover="443" id="menu-button_8" href="/quadravox/">
-                    <span id="I6285_3127_6279_16912_4476_15653" class="pointer-events-none"><span id="__49" class="text">Quadravox</span></span>
-                  </a>
-                </div>
-                <div id="Frame_25">
-                  <a data-reaction-hover="449" id="menu-button_9" href="/vr_light/">
-                    <span id="I6285_3127_6279_16914_4476_15653" class="pointer-events-none"><span id="__50" class="text">VR Light</span></span>
-                  </a>
-                </div>
-                <div id="Frame_26">
-                  <a data-reaction-hover="455" id="menu-button_10" href="/wall_hang/">
-                    <span id="I6285_3127_6279_16916_4476_15653" class="pointer-events-none"><span id="__51" class="text">Wall Hang</span></span>
-                  </a>
-                </div>
-              </div>
-            <a class="portfolio-extra-project" href="/expressive-wearable/">Groove Pants</a><a class="portfolio-extra-project" href="/step-stool/">Step + Stow</a><a class="portfolio-extra-project" href="/sound-device/">JBC Fresh</a><a class="portfolio-extra-project" href="/pda-2040/">Mind Link Wrist</a></div>
+            <div id="Help"><span style="font:500 14px/1.5 Geist,Arial,sans-serif">Projects</span><nav class="uniform-project-links" aria-label="Projects"><a href="/table/">Table</a><a href="/quadravox/">Quadravox</a><a href="/vr_light/">VR Light</a><a href="/wall_hang/">Wall Hang</a><a href="/expressive-wearable/">Groove Pants</a><a href="/step-stool/">Step + Stow</a><a href="/sound-device/">JBC Fresh</a><a href="/pda-2040/">Mind Link Wrist</a></nav></div>
           </div>
         </div>
       </div>
