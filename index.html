@@ -64,11 +64,26 @@
 .scroll-reveal{transition:opacity .75s ease,translate .75s cubic-bezier(.22,1,.36,1);transition-delay:var(--reveal-delay,0ms)}
 .scroll-reveal[data-reveal="pending"]{opacity:0;translate:0 28px}
 .scroll-reveal[data-reveal="visible"]{opacity:1;translate:0 0}
-.portfolio-portrait{pointer-events:auto!important;overflow:visible!important;transform:perspective(900px) translate3d(var(--photo-x,0px),var(--photo-y,0px),0) rotateX(var(--photo-rx,0deg)) rotateY(var(--photo-ry,0deg));transition:transform .45s cubic-bezier(.22,1,.36,1)}
-.portfolio-portrait img{border-radius:10px}
-@media(hover:hover) and (pointer:fine){.portfolio-portrait:hover img{animation:portrait-float 4s ease-in-out infinite}}
-@keyframes portrait-float{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-9px) rotate(.6deg)}}
-@media(prefers-reduced-motion:reduce){.scroll-reveal{transition:none;opacity:1!important;translate:none!important}.portfolio-portrait{transform:none!important;transition:none}.portfolio-portrait img{animation:none!important}}
+@media(prefers-reduced-motion:reduce){.scroll-reveal{transition:none;opacity:1!important;translate:none!important}}
+</style><style id="portrait-carousel-style">
+#Container_18{height:auto;align-items:center;min-width:0;overflow:visible}
+.about-carousel{width:100%;max-width:469px;min-width:0;color:#17151d;font-family:Geist,Arial,sans-serif}
+.portrait-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 2px 16px;font-size:13px;color:#6e647d}
+.portrait-hint{font-size:12px;color:#8a8493}
+.portrait-track{display:flex;gap:16px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-padding:0;cursor:grab;border-radius:12px;touch-action:pan-x pan-y;user-select:none;scrollbar-width:none;padding:0 0 8px}
+.portrait-track::-webkit-scrollbar{display:none}.portrait-track::after{content:"";flex:0 0 calc(13% - 16px)}
+.portrait-track.is-dragging{cursor:grabbing;scroll-snap-type:none}
+.portrait-slide{flex:0 0 87%;min-width:0;margin:0;aspect-ratio:469/529;overflow:hidden;border-radius:12px;scroll-snap-align:start;background:#ebe7f2}
+.portrait-slide img{display:block;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.portrait-controls{display:flex;justify-content:space-between;align-items:center;padding:16px 2px 0}
+.portrait-count{font-size:12px;letter-spacing:.12em;font-variant-numeric:tabular-nums;color:#776c87}
+.portrait-arrows{display:flex;gap:10px}
+.portrait-arrows button{width:40px;height:40px;border:1px solid #d7cde9;border-radius:50%;background:transparent;color:#8056de;font:20px/1 Arial,sans-serif;cursor:pointer;display:grid;place-items:center;transition:background .2s,color .2s}
+.portrait-arrows button:hover:not(:disabled){background:#8056de;color:#fff}
+.portrait-arrows button:disabled{opacity:.3;cursor:default}
+.portrait-track:focus-visible,.portrait-arrows button:focus-visible{outline:2px solid #8056de;outline-offset:4px}
+@media(max-width:600px){.portrait-slide{flex-basis:88%}.portrait-track{gap:12px}.portrait-track::after{flex-basis:calc(12% - 12px)}.portrait-hint{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.portrait-arrows button{transition:none}}
 </style></head><body data--breakpoints-device="Desktop" id="_">
   <div id="__x2d_body" class="dragScroll">
     <div role="banner" id="nav-desktop">
@@ -402,9 +417,11 @@
           <div id="Text_43"><p id="__66" class="about-bio"><span id="__67" class="text">As an </span><span id="__68" class="text">industrial designer</span><span id="__69" class="text"> and </span><span id="__70" class="text">artist</span><span id="__71" class="text">, I blend </span><span id="__72" class="text">creativity</span><span id="__73" class="text"> and</span><span id="__74" class="text"> technology </span><span id="__75" class="text">to craft captivating </span><span id="__76" class="text">experiences </span><span id="__77" class="text">and</span><span id="__78" class="text"> products</span><span id="__79" class="text">. With an eye for detail and a focus on </span><span id="__80" class="text">innovation</span><span id="__81" class="text">, I bring </span><span id="__82" class="text">depth</span><span id="__83" class="text"> to every project. I'm a student at Georgia Institute of Technology with a passion for finding </span><span id="__84" class="text">creative solutions</span><span id="__85" class="text"> to technical problems. </span></p><div class="about-contact"><span id="__88" class="text"><span id="Contact" class="local-contact-anchor"></span>AndrewGDaugherty@gmail.com<br id="__89">470-345-7339<br id="__90"></span><a id="__91" class="text" href="/assets/resume.pdf">Resume PDF</a></div></div>
         </div>
         <div id="Container_18">
-          <div id="Male_model_portfolio_ideas_in_Chicago_030224_Modeling_Xander1398_retouched_1" class="pointer-events-none">
-            <img src="/cdn-cgi/imagedelivery/s-dfVpmPR-aKHmwFNwAgnQ/vivian-6ii52m7y6i.figweb.site-ff92ecc8be3549b544cded582c01643fe4974176/w=938" alt="Male-model-portfolio-ideas-in-Chicago-030224.Modeling.Xander1398_retouched 1" id="__92" loading="lazy" decoding="async">
-          </div>
+          <section class="about-carousel" aria-label="Photos of Andrew" aria-roledescription="carousel">
+<div class="portrait-heading"><span>Photos</span><span class="portrait-hint">Drag to explore ↔</span></div>
+<div class="portrait-track" tabindex="0" aria-label="Photo gallery. Use the left and right arrow keys."><figure class="portrait-slide" role="group" aria-roledescription="slide" aria-label="1 of 3"><img src="/cdn-cgi/imagedelivery/s-dfVpmPR-aKHmwFNwAgnQ/vivian-6ii52m7y6i.figweb.site-ff92ecc8be3549b544cded582c01643fe4974176/w=938" alt="Andrew Daugherty, portrait 1" loading="lazy" decoding="async" draggable="false"></figure><figure class="portrait-slide" role="group" aria-roledescription="slide" aria-label="2 of 3"><img src="/cdn-cgi/imagedelivery/s-dfVpmPR-aKHmwFNwAgnQ/vivian-6ii52m7y6i.figweb.site-ff92ecc8be3549b544cded582c01643fe4974176/w=938" alt="Andrew Daugherty, portrait 2" loading="lazy" decoding="async" draggable="false"></figure><figure class="portrait-slide" role="group" aria-roledescription="slide" aria-label="3 of 3"><img src="/cdn-cgi/imagedelivery/s-dfVpmPR-aKHmwFNwAgnQ/vivian-6ii52m7y6i.figweb.site-ff92ecc8be3549b544cded582c01643fe4974176/w=938" alt="Andrew Daugherty, portrait 3" loading="lazy" decoding="async" draggable="false"></figure></div>
+<div class="portrait-controls"><span class="portrait-count" aria-live="polite" aria-atomic="true">01 / 03</span><div class="portrait-arrows"><button type="button" class="portrait-prev" aria-label="Previous photo" disabled>←</button><button type="button" class="portrait-next" aria-label="Next photo">→</button></div></div>
+</section>
         </div>
       </div>
       <div id="Content_1">
@@ -766,17 +783,23 @@
  const revealHash=()=>{try{const target=document.getElementById(decodeURIComponent(location.hash.slice(1)));if(target)showAncestors(target)}catch{}};
  addEventListener('hashchange',revealHash);revealHash();
  reduce.addEventListener('change',e=>{if(e.matches){observer?.disconnect();elements.forEach(show)}});
- const photo=document.querySelector('#Male_model_portfolio_ideas_in_Chicago_030224_Modeling_Xander1398_retouched_1');
- if(photo){
-  photo.classList.add('portfolio-portrait');
-  let frame=0,x=0,y=0;
-  const update=()=>{frame=0;photo.style.setProperty('--photo-x',`${x*9}px`);photo.style.setProperty('--photo-y',`${y*7}px`);photo.style.setProperty('--photo-rx',`${-y*5}deg`);photo.style.setProperty('--photo-ry',`${x*6}deg`)};
-  photo.addEventListener('pointermove',e=>{
-   if(reduce.matches||e.pointerType==='touch')return;
-   const r=photo.getBoundingClientRect();x=Math.max(-1,Math.min(1,(e.clientX-r.left)/r.width*2-1));y=Math.max(-1,Math.min(1,(e.clientY-r.top)/r.height*2-1));
-   if(!frame)frame=requestAnimationFrame(update);
-  });
-  photo.addEventListener('pointerleave',()=>{x=y=0;if(frame)cancelAnimationFrame(frame);update()});
- }
+})();
+</script><script id="portrait-carousel-script">
+(()=>{
+ const gallery=document.querySelector('.about-carousel');if(!gallery)return;
+ const track=gallery.querySelector('.portrait-track'),slides=[...gallery.querySelectorAll('.portrait-slide')],prev=gallery.querySelector('.portrait-prev'),next=gallery.querySelector('.portrait-next'),count=gallery.querySelector('.portrait-count');
+ const reduce=matchMedia('(prefers-reduced-motion: reduce)');let active=0,drag=null,frame=0;
+ const leftOf=i=>slides[i].offsetLeft-slides[0].offsetLeft;
+ // A trailing inset lets the final photo reach the same starting position.
+ const update=()=>{frame=0;let nearest=0;slides.forEach((s,i)=>{if(Math.abs(leftOf(i)-track.scrollLeft)<Math.abs(leftOf(nearest)-track.scrollLeft))nearest=i});active=nearest;count.textContent=`${String(active+1).padStart(2,'0')} / ${String(slides.length).padStart(2,'0')}`;prev.disabled=active===0;next.disabled=active===slides.length-1};
+ const go=i=>{i=Math.max(0,Math.min(slides.length-1,i));track.scrollTo({left:leftOf(i),behavior:reduce.matches?'instant':'smooth'})};
+ prev.addEventListener('click',()=>go(active-1));next.addEventListener('click',()=>go(active+1));
+ track.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();go(active+(e.key==='ArrowRight'?1:-1))}});
+ track.addEventListener('scroll',()=>{if(!frame)frame=requestAnimationFrame(update)},{passive:true});
+ track.addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse'||e.button!==0)return;drag={id:e.pointerId,x:e.clientX,left:track.scrollLeft};track.setPointerCapture(e.pointerId);track.classList.add('is-dragging')});
+ track.addEventListener('pointermove',e=>{if(!drag||e.pointerId!==drag.id)return;track.scrollLeft=drag.left+drag.x-e.clientX});
+ const release=e=>{if(!drag||e.pointerId!==drag.id)return;drag=null;track.classList.remove('is-dragging');if(track.hasPointerCapture(e.pointerId))track.releasePointerCapture(e.pointerId);update();go(active)};
+ track.addEventListener('pointerup',release);track.addEventListener('pointercancel',release);track.addEventListener('lostpointercapture',()=>{drag=null;track.classList.remove('is-dragging')});
+ new ResizeObserver(()=>{track.scrollLeft=leftOf(active);update()}).observe(track);update();
 })();
 </script></body></html>
